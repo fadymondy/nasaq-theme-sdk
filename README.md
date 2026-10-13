@@ -121,6 +121,38 @@ sources next to Nasaq's:
 The copy is built in, in Arabic and English. `{app}` becomes `appName`. To change any string,
 pass `labels`.
 
+## Products (Nasaq Studio themes)
+
+Nasaq Studio builds themes *for* a product. The `product` package is that contract:
+
+- `product.Product`: the product id, the entities and fields a theme can bind to, and the page
+  templates every theme must render (Matjar: home, collection, product, cart, checkout, account).
+- Seed packs: realistic data a theme is designed with (`matjar.LoadPack("sahar")`: 13 products,
+  4 categories, 3 collections, pages, menus, a cart, checkout and account sample). Keys are stable,
+  so seeding is idempotent and a reset removes exactly what a pack added.
+- `Adapter.Preview(template, pack, params)`: the view model of a template filled with a pack.
+- `product.Package`: the published theme Studio sends with `PUT /api/nasaq/theme`.
+- `product.Receiver`: the product's handler for that route (bearer link token, validation,
+  bilingual errors); `product.Push` is the Studio side.
+
+```go
+import (
+	"github.com/fadymondy/nasaq-theme-sdk/product"
+	"github.com/fadymondy/nasaq-theme-sdk/product/matjar" // registers Matjar
+)
+
+mux.Handle(product.ThemePath, product.Receiver{
+	Product: matjar.ID,
+	Verify:  func(ctx context.Context, r *http.Request, tok string) (string, error) { return store.TenantForLinkToken(ctx, tok) },
+	Apply: func(ctx context.Context, tenant string, p product.Package) (product.Applied, error) {
+		return store.ApplyBrand(ctx, tenant, matjar.BrandOf(p)) // colours, corners, font, hero
+	},
+})
+```
+
+npm: `@fadymondy/nasaq-theme-sdk/products` has the same packs (generated from the Go JSON by
+`npm run gen`), the templates, the `ThemePackage` type and `matjarLook`.
+
 ## Develop
 
 ```bash
