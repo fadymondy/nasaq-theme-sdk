@@ -1,6 +1,6 @@
 {
   "name": "@fadymondy/nasaq-theme-sdk",
-  "version": "0.2.0-rc.1",
+  "version": "0.2.0",
   "description": "Nasaq themes for any app: the catalog, CircleXO connect, and the Themes page.",
   "license": "MIT",
   "author": "Fady Mondy",
