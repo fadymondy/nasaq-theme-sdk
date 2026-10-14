@@ -14,7 +14,7 @@ type Brand struct {
 	Accent       string            `json:"accent"`
 	Mode         string            `json:"mode"`   // light | system
 	Radius       string            `json:"radius"` // sharp | rounded | pill
-	Font         string            `json:"font"`   // lusail | inter
+	Font         string            `json:"font"`   // plex-arabic | inter
 	Preset       string            `json:"preset"` // "nasaq:<theme>@<version>"
 	Tokens       map[string]string `json:"tokens"`
 	Announcement struct {
@@ -91,15 +91,15 @@ func RadiusOf(r string) string {
 	return "rounded"
 }
 
-// FontOf picks Matjar's font: Inter when the theme's Latin face is Inter, Lusail otherwise
-// (Lusail carries all Arabic in every Matjar store).
+// FontOf picks Matjar's font: Inter when the theme's Latin face is Inter, IBM Plex Sans Arabic
+// ("plex-arabic") otherwise (Plex carries all Arabic in every Matjar store).
 func FontOf(fonts map[string]string) string {
 	for _, k := range []string{"latin", "headingLatin", "sans"} {
 		if strings.Contains(strings.ToLower(fonts[k]), "inter") {
 			return "inter"
 		}
 	}
-	return "lusail"
+	return "plex-arabic"
 }
 
 func clip(s string, n int) string {
