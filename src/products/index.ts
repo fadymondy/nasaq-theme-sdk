@@ -61,9 +61,9 @@ export function matjarRadius(r?: string): "sharp" | "rounded" | "pill" {
   return "rounded"
 }
 
-/** Matjar's font for a theme's fonts: Inter when the Latin face is Inter, Lusail otherwise. */
-export function matjarFont(fonts?: Record<string, string>): "inter" | "lusail" {
-  return ["latin", "headingLatin", "sans"].some((k) => (fonts?.[k] ?? "").toLowerCase().includes("inter")) ? "inter" : "lusail"
+/** Matjar's font for a theme's fonts: Inter when the Latin face is Inter, IBM Plex Sans Arabic ("plex-arabic") otherwise. */
+export function matjarFont(fonts?: Record<string, string>): "inter" | "plex-arabic" {
+  return ["latin", "headingLatin", "sans"].some((k) => (fonts?.[k] ?? "").toLowerCase().includes("inter")) ? "inter" : "plex-arabic"
 }
 
 /** The Matjar colours, corners, font and mode of a package (see Go matjar.BrandOf). */
