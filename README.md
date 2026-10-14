@@ -1,4 +1,19 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/fadymondy/nasaq/main/packages/brands/assets/nasaq-mark.svg" alt="Nasaq" width="80" />
+
 # nasaq-theme-sdk
+
+**Nasaq themes for any app: the theme catalog, live themes from Nasaq Studio, and a ready-made Themes page (Go + npm).**
+
+[![CI](https://github.com/fadymondy/nasaq-theme-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/fadymondy/nasaq-theme-sdk/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@fadymondy/nasaq-theme-sdk.svg)](https://www.npmjs.com/package/@fadymondy/nasaq-theme-sdk)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/fadymondy/nasaq-theme-sdk?style=social)](https://github.com/fadymondy/nasaq-theme-sdk/stargazers)
+
+[Nasaq](https://github.com/fadymondy/nasaq) · [Go docs](https://pkg.go.dev/github.com/fadymondy/nasaq-theme-sdk) · [Discussions](https://github.com/fadymondy/nasaq-theme-sdk/discussions) · [Contributing](CONTRIBUTING.md)
+
+</div>
 
 Nasaq themes for any app. An app built on it gets:
 
@@ -160,6 +175,20 @@ go test ./...                    # Go
 npm install && npm run build && npm test   # npm
 ```
 
+## Contributing
+
+Contributions are welcome: bug reports, theme mapping fixes, and new product packs. Read [CONTRIBUTING.md](CONTRIBUTING.md) for setup, conventions
+and the DCO sign-off, then look for
+[`good first issue`](https://github.com/fadymondy/nasaq-theme-sdk/labels/good%20first%20issue).
+
+## Community
+
+- [GitHub Discussions](https://github.com/fadymondy/nasaq-theme-sdk/discussions): questions, ideas, show and tell
+- [Issues](https://github.com/fadymondy/nasaq-theme-sdk/issues/new/choose): bugs and feature requests
+- Security reports: see [SECURITY.md](SECURITY.md)
+
+Please follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## License
 
-MIT
+MIT, © 2026 Fady Mondy. See [LICENSE](LICENSE).

@@ -122,7 +122,7 @@ func TestConnectBindPull(t *testing.T) {
 	if _, err := c.Bind(ctx, "s1", "nope", nasaq.Binding{}); !errors.Is(err, theme.ErrUnknownProject) {
 		t.Fatalf("bind unknown: %v", err)
 	}
-	link2, err := c.Bind(ctx, "s1", "p1", nasaq.Binding{AppRef: "elbasha", Role: "booking", MountPath: "/book", RenderURL: "https://app.example.test"})
+	link2, err := c.Bind(ctx, "s1", "p1", nasaq.Binding{AppRef: "acme", Role: "booking", MountPath: "/book", RenderURL: "https://app.example.test"})
 	if err != nil {
 		t.Fatal(err)
 	}
