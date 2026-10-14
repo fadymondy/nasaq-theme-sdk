@@ -33,6 +33,12 @@ It has two halves that share one contract:
 
 ## Go
 
+For a runnable, credentials-free demo, see [the minimal HTTP example](examples/minimal).
+Run `go run ./examples/minimal`, then open <http://127.0.0.1:8080>. It lists the
+app's themes from a local `nasaqtest` fake and serves the selected theme's light
+palette as CSS. It does not connect to Nasaq Studio or CircleXO. Stop it with
+Ctrl+C; choose another port in `main.go` if 8080 is already in use.
+
 ```go
 import (
 	"github.com/fadymondy/nasaq-theme-sdk/circlexo"

@@ -44,6 +44,13 @@ type Server struct {
 
 // New starts a fake Nasaq for app. It closes when the test ends.
 func New(t testing.TB, app string) *Server {
+	n := NewServer(app)
+	t.Cleanup(n.Close)
+	return n
+}
+
+// NewServer starts a fake without test-owned cleanup. The caller must close it.
+func NewServer(app string) *Server {
 	n := &Server{Live: "clinic"}
 	cover := map[string]any{app: map[string]any{"pages": []string{"book"}}}
 	clinic := map[string]any{"id": "clinic", "version": "1.0.0", "name": map[string]string{"en": "Clinic", "ar": "عيادة"},
@@ -99,6 +106,5 @@ func New(t testing.TB, app string) *Server {
 			w.WriteHeader(http.StatusNotFound)
 		}
 	}))
-	t.Cleanup(n.Close)
 	return n
 }
