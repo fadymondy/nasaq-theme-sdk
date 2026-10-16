@@ -1,0 +1,20 @@
+{
+  "contrast": [
+    {"a":"#FFFFFF","b":"#000000","ratio":21},
+    {"a":"#FF0000","b":"#00FF00","ratio":2.9139375476009137},
+    {"a":"#123456","b":"#abcdef","ratio":7.697307588979985},
+    {"a":"#080808","b":"#0A0A0A","ratio":1.011578764545823},
+    {"a":"#777777","b":"#FFFFFF","ratio":4.478089453577215},
+    {"a":"#0E1A3C","b":"#FFFF00","ratio":15.877512518313589},
+    {"a":"#123456","b":"#123456","ratio":1}
+  ],
+  "theme": {
+    "input": {"source":"nasaq","id":"parity-demo","accent":{"light":"#E8A87C","dark":"#4FD1C5"},"radius":"md","own_action":{"light":"#123456","dark":"#654321"},"applied_at":"2026-01-01T00:00:00Z"},
+    "public": {"source":"nasaq","id":"parity-demo","accent":{"light":"#E8A87C","dark":"#4FD1C5"},"background":{"light":"","dark":""},"foreground":{"light":"","dark":""},"radius":"md"},
+    "css": {
+      "light":"--nq-accent:#E8A87C;--nq-accent-text:color-mix(in oklab,#E8A87C,black 40%);",
+      "dark":"--nq-accent:#4FD1C5;--nq-accent-text:#4FD1C5;",
+      "radius":"--nq-radius-surface:0px;--nq-radius-card:10px;--nq-radius-control:8px;--nq-radius-floating:12px;"
+    }
+  }
+}
