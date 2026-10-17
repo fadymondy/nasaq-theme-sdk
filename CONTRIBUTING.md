@@ -27,6 +27,7 @@ npm install && npm run build && npm test
 ```bash
 gofmt -l .   # must print nothing
 go vet ./... && go test ./...
+golangci-lint run    # v2.15.0, matching CI
 npm run typecheck && npm test
 ```
 

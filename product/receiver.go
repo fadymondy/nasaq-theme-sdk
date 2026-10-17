@@ -131,7 +131,7 @@ func Push(ctx context.Context, c *http.Client, base, token string, p Package) (A
 	if err != nil {
 		return Applied{}, err
 	}
-	defer res.Body.Close()
+	defer func() { _ = res.Body.Close() }()
 	rb, _ := io.ReadAll(io.LimitReader(res.Body, 64<<10))
 	switch {
 	case res.StatusCode == http.StatusNotFound || res.StatusCode == http.StatusMethodNotAllowed:

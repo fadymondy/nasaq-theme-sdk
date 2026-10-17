@@ -188,7 +188,7 @@ func (c *Client) call(ctx context.Context, method, path, token string, body, out
 	if err != nil {
 		return fmt.Errorf("%w: %v", ErrUnavailable, err)
 	}
-	defer res.Body.Close()
+	defer func() { _ = res.Body.Close() }()
 	if res.StatusCode/100 != 2 {
 		b, _ := io.ReadAll(io.LimitReader(res.Body, 512))
 		return &StatusError{Status: res.StatusCode, Body: strings.TrimSpace(string(b))}

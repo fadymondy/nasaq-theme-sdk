@@ -87,7 +87,9 @@ func TestConnectBindPull(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	res.Body.Close()
+	if err := res.Body.Close(); err != nil {
+		t.Fatal(err)
+	}
 	loc, err := url.Parse(res.Header.Get("Location"))
 	if err != nil || !strings.HasPrefix(loc.String(), back) {
 		t.Fatalf("hub sent us to %q (%v)", res.Header.Get("Location"), err)
